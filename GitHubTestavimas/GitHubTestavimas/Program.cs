@@ -22,8 +22,15 @@ namespace GitHubTestavimas
         private static void Main(string[] args)
         {
             List<IZinute> Zinutes = new List<IZinute>();
+
+
+
+            Zinutes.Add(new PagalZinute());
+
+
             Testas t = new Testas();
             Zinutes.Add(t);
+
             foreach (var item in Zinutes)
             {
                 item.SpausdintiZinute();
