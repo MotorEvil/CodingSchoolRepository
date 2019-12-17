@@ -24,6 +24,8 @@ namespace GitHubTestavimas
         public void SpausdintiZinute()
         {
             Console.WriteLine(Zinute);
+        }
+
 
 
     class ZinuteKlase : IZinute
