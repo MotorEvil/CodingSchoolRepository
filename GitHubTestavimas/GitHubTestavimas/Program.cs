@@ -1,22 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GitHubTestavimas
 {
     interface IZinute
     {
-         string Zinute { get; set; }
+        string Zinute { get; set; }
         void SpausdintiZinute();
     }
 
-    
-    class Program
+    class AsmZinute : IZinute
+    {
+        string Komentaras { get; set; }
+        public string Zinute { get; set; }
+        public void SpausdintiZinute()
+        {
+            Console.WriteLine("Zinute išsiųsta");
+        }
+    }
+
+class Program
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
