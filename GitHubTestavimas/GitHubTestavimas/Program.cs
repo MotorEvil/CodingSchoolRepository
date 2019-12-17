@@ -9,13 +9,21 @@ namespace GitHubTestavimas
  
     public class Feature : IZinute
     {
+
+        string Zinute { get; set; }
+        void SpausdintiZinute();
+    }
+    internal class ManoZinute : IZinute
+    {
+
+
         public string Zinute { get; set; }
         public void SpausdintiZinute()
         {
 
         }
     }
-    
+
     class Program
     {
         
@@ -44,7 +52,16 @@ namespace GitHubTestavimas
 
         public void SpausdintiZinute()
         {
+
+            List<IZinute> Zinutes = new List<IZinute>();
+            Zinutes.Add(new ManoZinute());
+            foreach(var item in Zinutes)
+            {
+                item.SpausdintiZinute();
+            }
+
             Console.WriteLine("zinute  su skaiciu");
+
         }
     }
 }
