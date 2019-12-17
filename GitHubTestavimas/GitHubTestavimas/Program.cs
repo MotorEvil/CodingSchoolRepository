@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace GitHubTestavimas
 {
-    interface IZinute
+ 
+    public class Feature : IZinute
     {
-         string Zinute { get; set; }
+
+        string Zinute { get; set; }
         void SpausdintiZinute();
     }
+
     class ZinuteKlase : IZinute
     {
         public string Zinute { get; set; }
@@ -20,17 +23,64 @@ namespace GitHubTestavimas
         }
     }
     
+
+    internal class ManoZinute : IZinute
+    {
+
+
+        public string Zinute { get; set; }
+        public void SpausdintiZinute()
+        {
+
+        }
+    }
+
+
     class Program
     {
-        static void Main(string[] args)
+        
+        private static void Main(string[] args)
         {
             List<IZinute> Zinutes = new List<IZinute>();
+
             ZinuteKlase zinute = new ZinuteKlase();
             Zinutes.Add(zinute);
+
+
+
+
+            Zinutes.Add(new PagalZinute());
+
+
+            Testas t = new Testas();
+            Zinutes.Add(t);
+
+
             foreach (var item in Zinutes)
             {
                 item.SpausdintiZinute();
             }
+
+
+        }
+    }
+    class Testas : IZinute
+    {
+        public string Zinute { get; set; }
+
+        public void SpausdintiZinute()
+        {
+
+            List<IZinute> Zinutes = new List<IZinute>();
+            Zinutes.Add(new ManoZinute());
+            foreach(var item in Zinutes)
+            {
+                item.SpausdintiZinute();
+            }
+
+            Console.WriteLine("zinute  su skaiciu");
+
+
         }
     }
 }
