@@ -13,6 +13,17 @@ namespace GitHubTestavimas
         string Zinute { get; set; }
         void SpausdintiZinute();
     }
+
+    class ZinuteKlase : IZinute
+    {
+        public string Zinute { get; set; }
+        public void SpausdintiZinute()
+        {
+            Console.WriteLine("Zinute");
+        }
+    }
+    
+
     internal class ManoZinute : IZinute
     {
 
@@ -24,12 +35,17 @@ namespace GitHubTestavimas
         }
     }
 
+
     class Program
     {
         
         private static void Main(string[] args)
         {
             List<IZinute> Zinutes = new List<IZinute>();
+
+            ZinuteKlase zinute = new ZinuteKlase();
+            Zinutes.Add(zinute);
+
 
 
 
@@ -39,10 +55,12 @@ namespace GitHubTestavimas
             Testas t = new Testas();
             Zinutes.Add(t);
 
+
             foreach (var item in Zinutes)
             {
                 item.SpausdintiZinute();
             }
+
 
         }
     }
@@ -61,6 +79,7 @@ namespace GitHubTestavimas
             }
 
             Console.WriteLine("zinute  su skaiciu");
+
 
         }
     }
