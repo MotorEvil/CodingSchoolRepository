@@ -6,17 +6,16 @@ using System.Threading.Tasks;
 
 namespace GitHubTestavimas
 {
-    interface IZinute
+    internal class Program
     {
-         string Zinute { get; set; }
-        void SpausdintiZinute();
-    }
-
-    
-    class Program
-    {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
+            List<IZinute> Zinutes = new List<IZinute>();
+
+            foreach (var item in Zinutes)
+            {
+                item.SpausdintiZinute();
+            }
         }
     }
 }
