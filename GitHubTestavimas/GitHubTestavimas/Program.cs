@@ -8,15 +8,27 @@ namespace GitHubTestavimas
 {
     interface IZinute
     {
-         string Zinute { get; set; }
+        string Zinute { get; set; }
         void SpausdintiZinute();
     }
+    internal class ManoZinute : IZinute
+    {
+        public string Zinute { get; set; }
+        public void SpausdintiZinute()
+        {
 
-    
+        }
+    }
     class Program
     {
         static void Main(string[] args)
         {
+            List<IZinute> Zinutes = new List<IZinute>();
+            Zinutes.Add(new ManoZinute());
+            foreach(var item in Zinutes)
+            {
+                item.SpausdintiZinute();
+            }
         }
     }
 }
