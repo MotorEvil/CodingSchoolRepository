@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace GitHubTestavimas
 {
-    interface IZinute
-    {
-         string Zinute { get; set; }
-        void SpausdintiZinute();
-    }
-
+ 
     public class Feature : IZinute
     {
         public string Zinute { get; set; }
@@ -23,9 +18,16 @@ namespace GitHubTestavimas
     
     class Program
     {
-        static void Main(string[] args)
+        
+        private static void Main(string[] args)
         {
-            List<IZinute> Zinute = new List<IZinute>();
+            List<IZinute> Zinutes = new List<IZinute>();
+
+            foreach (var item in Zinutes)
+            {
+                item.SpausdintiZinute();
+            }
+
         }
     }
 }
