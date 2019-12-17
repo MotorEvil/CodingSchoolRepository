@@ -12,11 +12,20 @@ namespace GitHubTestavimas
         void SpausdintiZinute();
     }
 
+    public class Feature : IZinute
+    {
+        public string Zinute { get; set; }
+        public void SpausdintiZinute()
+        {
+
+        }
+    }
     
     class Program
     {
         static void Main(string[] args)
         {
+            List<IZinute> Zinute = new List<IZinute>();
         }
     }
 }
