@@ -6,8 +6,19 @@ using System.Threading.Tasks;
 
 namespace GitHubTestavimas
 {
-    internal class Program
+ 
+    public class Feature : IZinute
     {
+        public string Zinute { get; set; }
+        public void SpausdintiZinute()
+        {
+
+        }
+    }
+    
+    class Program
+    {
+        
         private static void Main(string[] args)
         {
             List<IZinute> Zinutes = new List<IZinute>();
@@ -16,6 +27,7 @@ namespace GitHubTestavimas
             {
                 item.SpausdintiZinute();
             }
+
         }
     }
 }
