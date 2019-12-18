@@ -28,6 +28,8 @@ namespace GitHubTestavimas
                 item.SpausdintiZinute();
             }
 
+            Console.WriteLine("Testing message");
+
         }
     }
 }
