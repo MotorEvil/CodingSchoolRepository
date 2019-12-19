@@ -81,6 +81,9 @@ namespace GitHubTestavimas
             }
 
 
+            Console.WriteLine("Testing message");
+
+
         }
     }
     class Testas : IZinute
@@ -101,6 +104,7 @@ namespace GitHubTestavimas
 
 
             Console.WriteLine("zinute  su skaiciu");
+
 
 
 
