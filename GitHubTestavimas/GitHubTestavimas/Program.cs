@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GitHubTestavimas
 {
@@ -13,6 +9,19 @@ namespace GitHubTestavimas
         string Zinute { get; set; }
         void SpausdintiZinute();
     }
+
+
+    class AsmZinute : IZinute
+    {
+        string Komentaras { get; set; }
+        public string Zinute { get; set; }
+        public void SpausdintiZinute()
+        {
+            Console.WriteLine("Zinute išsiųsta");
+        }
+    }
+
+class Program
 
     class Message : IZinute
     {
@@ -52,6 +61,7 @@ namespace GitHubTestavimas
 
 
     class Program
+
     {
         
         private static void Main(string[] args)
@@ -92,6 +102,7 @@ namespace GitHubTestavimas
 
         public void SpausdintiZinute()
         {
+
 
             List<IZinute> Zinutes = new List<IZinute>();
             Zinutes.Add(new ManoZinute());
